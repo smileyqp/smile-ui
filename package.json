@@ -6,6 +6,13 @@
   "module": "esm/index.js",
   "author": "smileyqp",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smileyqp/smile-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/smileyqp/smile-ui.git/issues"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
