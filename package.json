@@ -2,6 +2,10 @@
   "name": "smile-ui",
   "version": "0.1.0",
   "private": true,
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "author": "smileyqp",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -15,7 +19,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:commonjs": "cross-env BABEL_OUTPUT=commonjs babel src/components --out-dir lib/ --ignore **/__tests__,**/__mocks__",
+    "build:esm": "babel src/components --out-dir esm/ --ignore **/__tests__,**/__mocks__",
+    "copy-css:esm": "cpx \"src/components/**/*.css\" esm",
+    "copy-css:lib": "cpx \"src/components/**/*.css\" lib"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +42,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "cpx": "^1.5.0",
+    "cross-env": "^7.0.3"
   }
 }
